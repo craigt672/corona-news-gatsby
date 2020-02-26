@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+}
+
+.logo {
+  transition: width 2s, height 2s, background-color 2s, transform 2s;
+  animation-duration: 0.5s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+
+  &:hover {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes bounce {
+  from {
+    height: 56%;
+    width: 76%;
+  }
+
+  75% {
+    height: 56.02%;
+    width: 76.02%;
+  }
+
+  to {
+    height: 56.03%;
+    width: 76.03%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    margin-top: calc(100vh/10);
+  }
+
+  .logo {
+    height: 130px;
+    width: 320px;
+  }
+}

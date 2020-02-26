@@ -1,0 +1,20 @@
+.container {
+  display: block;
+  text-align: center;
+  color: #FFFFFF;
+
+  hr {
+    border: 1px solid #FFFFFF;
+    margin: 0 auto 16px;
+    width: 50px;
+  }
+
+  h4 {
+    font-family: Coda;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 48px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
