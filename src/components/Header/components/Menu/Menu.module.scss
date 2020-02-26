@@ -1,0 +1,75 @@
+.container {
+  display: inline-block;
+  font-size: 2rem;
+  padding: 15px;
+  text-align: left;
+  -moz-user-select: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover {
+    > .menuLine {
+      cursor: pointer;
+    }
+  }
+}
+
+.topOpen {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.middle {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.bottomOpen {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+.menuLine {
+  display: block;
+  height: 2px;
+  margin-bottom: 3px;
+  transition: all 0.25s ease-in-out;
+  background-color:#ce2029;
+  width: 18px;
+  position: relative;
+}
+
+//Destop
+@media only screen and (min-width: 768px) {
+  .container {
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 18px;
+    padding: 15px;
+    text-align: left;
+    -moz-user-select: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .topOpen {
+    transform: translateY(5px) rotate(45deg);
+  }
+  
+  .middle {
+    opacity: 1;
+  }
+  
+  .hide {
+    opacity: 0;
+  }
+  
+  .bottomOpen {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+}

@@ -1,0 +1,94 @@
+.container {
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s ease;
+  transition: all .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  opacity: 0;
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.subContainer {
+  position: fixed;
+  background-color: white;
+  margin-top: calc(100vh/6);
+  width: 100%;
+  border-radius: 2px;
+  transition: all .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  overflow: hidden;
+  z-index: 200;
+  opacity: 0;
+}
+
+.containerAnimated {
+  opacity: 1;
+  z-index: 150;
+}
+
+.subContainerAnimated {
+  transform: translateY(-5%);
+  opacity: 1;
+  z-index: 200;
+}
+
+.closeButton {
+  position: absolute;
+  color: red;
+  font-size: 2.5rem;
+  right: 0;
+  top: 0;
+}
+
+//Destop
+@media only screen and (min-width: 768px) {
+  .container {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease;
+    transition: all .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    opacity: 0;
+  }
+  
+  .subContainer {
+    background-color: white;
+    width: 45%;
+    left: 25vw;
+    transition: all 1s ease;
+    transition: all .5s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    overflow: hidden;
+  }
+  
+  .containerAnimated {
+    opacity: 1;
+  }
+  
+  .subContainerAnimated {
+    transform: translateY(-5%);
+  }
+  
+  .closeButton {
+    position: absolute;
+    color: red;
+    font-size: 2.5rem;
+    right: 0;
+    top: 0;
+  }  
+}

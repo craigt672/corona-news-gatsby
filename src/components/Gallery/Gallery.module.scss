@@ -1,0 +1,96 @@
+@import "node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+
+.container {
+  width: 100%;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  min-height: calc(100vh + 300px);
+  font-family: 'Coda';
+  padding: 0;
+  display: flex;
+  justify-content: center;
+
+  > div {
+    max-width: 600px;
+    max-height: 600px;
+    margin-top: calc(100vh/14);
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.image {
+    max-width: 600px;
+    max-height: 600px;
+    margin-top: calc(100vh/10);
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.contactbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  min-height: 200px;
+  box-sizing: border-box;
+  margin: 0;
+
+  >* {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.callnow {
+  max-height: 200px;
+  padding: 0 50px;
+}
+
+.hours {
+  list-style: none;
+  max-height: 200px;
+  padding: 0 50px;
+
+  > li {
+    text-decoration: none;
+  }
+}
+
+//Destop
+@media only screen and (min-width: 800px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    > div {
+      max-width: 380px;
+      margin-top: calc(100vh/15);
+    }
+  }
+
+  .contact {
+    flex-direction: row;
+  }
+
+  .callnow {
+    max-height: 200px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .contactbox {
+    padding: 20px 50px;
+    width: 100%;
+  }
+}
