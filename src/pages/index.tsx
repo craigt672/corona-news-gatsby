@@ -14,24 +14,24 @@ import app from '../config';
 import GlobalContext from '../contexts';
 
 export default function HomePage() {
-  const defaultLocationHash = '';
+  // const defaultLocationHash = '';
 
-  const logPageViewEvent = () => {
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      analytics.logEvent("page_view", { page_title: "hero/home" });
-    }
-  }
+  // const logPageViewEvent = () => {
+  //   if (typeof window !== 'undefined') {
+  //     const analytics = app.analytics();
+  //     analytics.logEvent("page_view", { page_title: "hero/home" });
+  //   }
+  // }
   
-  const redirectHome = () => {
-    if (window.location.hash !== defaultLocationHash) {
-      window.location.replace("/");
-    }
-  }
+  // const redirectHome = () => {
+  //   if (window.location.hash !== defaultLocationHash) {
+  //     window.location.replace("/");
+  //   }
+  // }
 
-  useEffect(logPageViewEvent);
+  // useEffect(logPageViewEvent);
 
-  useEffect(redirectHome, [defaultLocationHash]);
+  // useEffect(redirectHome, [defaultLocationHash]);
 
   return (
     <GlobalContext>
