@@ -16,12 +16,8 @@ function Header() {
       <div className={styles.leftNav}>
         <Menu />
       </div>
-      <div className={styles.middleNav}>
-        <h1>coronacentral</h1>
-      </div>
-      <div className={styles.rightNav}>
-        <h4 onClick={openSubscribeModal}>Subscribe</h4>
-      </div>
+      <h1><span>corona</span>central</h1>
+      <h4 onClick={openSubscribeModal}>Subscribe</h4>
     </header>
   );
 }

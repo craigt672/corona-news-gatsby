@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   border-bottom: 1px solid #f2f2f2;
+  background-color: #fff;
 
   .emoji {
     width: 25px;
@@ -18,28 +19,38 @@
     display: flex;
   }
 
-  .middleNav {
-    h1 {
-      margin: 0;
-      padding: 0;
-      color: #000;
-      font-weight: 900;
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    line-height: 2.5;
+    letter-spacing: .3rem;
+
+    span {
+      color: #ce2029;
+      letter-spacing: .1rem;
     }
   }
+
   .rightNav {
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    h4 {
-      margin: 0;
-      padding: 10px 0;
-      display: inline-block;
-      vertical-align: middle;
+    
+  }
 
-      &:hover {
-        cursor: pointer;
-      }
+  h4 {
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2.5;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 
