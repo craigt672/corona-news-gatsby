@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import Loadable from 'react-loadable';
 
-import Videos from '../../components/VideoPlaylist/VideoPlaylist';
 import Contact from '../../components/Contact/Contact';
+import LatestNews from '../../components/LatestNews/LatestNews';
 
 import NavContext, { NAV_CLOSE } from '../../contexts/nav';
 
@@ -17,8 +16,7 @@ export default function Main() {
 
   return (
     <div className={styles.container} onClick={closeNav}>
-      <Videos />
-      <Contact />
+      <LatestNews />
     </div>
   )
 }
