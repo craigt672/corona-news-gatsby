@@ -13,9 +13,20 @@ import app from '../config';
 
 import GlobalContext from '../contexts';
 
-export default function HomePage() {
-  // const defaultLocationHash = '';
+// import {
+//   EventRegistry,
+//   QueryArticles,
+//   QueryItems,
+//   RequestArticlesInfo,
+//   ReturnInfo,
+//   ArticleInfoFlags,
+//   ConceptInfoFlags
+// } from 'eventregistry';
 
+// const er = new EventRegistry({apiKey: '283e8c19-f734-48e9-a254-ec96ddeb338d'});
+
+
+export default function HomePage() {
   // const logPageViewEvent = () => {
   //   if (typeof window !== 'undefined') {
   //     const analytics = app.analytics();
@@ -23,15 +34,23 @@ export default function HomePage() {
   //   }
   // }
   
-  // const redirectHome = () => {
-  //   if (window.location.hash !== defaultLocationHash) {
-  //     window.location.replace("/");
-  //   }
-  // }
-
   // useEffect(logPageViewEvent);
 
-  // useEffect(redirectHome, [defaultLocationHash]);
+  // const getArticles = () => async () => {
+  //   try {
+
+  //     const q3 = new QueryArticles({keywords: QueryItems.AND(["Barack", "Obama"])});
+
+  //     const response = await er.execQuery(q3);
+
+  //     console.log(response);
+  //     return response;
+  //   } catch(err) {
+  //     console.error(err);
+  //   }
+  // };
+  
+  // useEffect(getArticles, []);
 
   return (
     <GlobalContext>
