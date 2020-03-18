@@ -5,14 +5,14 @@ import 'firebase/database';
 import  'firebase/firestore';
 
 const config = {
-  apiKey: "AIzaSyBRznCQtr9LSW503tm9phzSviWiXHLY76o",
-  authDomain: "tajthefuture.firebaseapp.com",
-  databaseURL: "https://tajthefuture.firebaseio.com",
-  projectId: "tajthefuture",
-  storageBucket: "tajthefuture.appspot.com",
-  messagingSenderId: "707699478430",
-  appId: "1:707699478430:web:7ab531596e5ec2dd5c108f",
-  measurementId: "G-WCSZ9G4TKD"
+  apiKey: "AIzaSyBv21edTcSWQqQYKcYTTyzUXLgU6pzLh90",
+  authDomain: "coronacentral-c1113.firebaseapp.com",
+  databaseURL: "https://coronacentral-c1113.firebaseio.com",
+  projectId: "coronacentral-c1113",
+  storageBucket: "coronacentral-c1113.appspot.com",
+  messagingSenderId: "841067198513",
+  appId: "1:841067198513:web:29c25d8a9826cd20777d10",
+  measurementId: "G-FL800TSWHW"
 };
 
 const app = firebase.initializeApp(config);
