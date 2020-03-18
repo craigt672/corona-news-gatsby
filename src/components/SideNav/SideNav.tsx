@@ -14,8 +14,8 @@ function SideNav() {
 
   const links = [
     { name: 'NEWS', location: '#news' },
-    { name: 'Gallery', location: '#gallery' },
     { name: 'HEALTH', location: '#health' },
+    { name: 'Research', location: '#research' },
     { name: 'SHOP', location: '#shop' },
     { name: 'CONTACT', location: '#contact' }
   ];
