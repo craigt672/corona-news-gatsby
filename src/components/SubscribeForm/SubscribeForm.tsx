@@ -67,7 +67,7 @@ class SubscribeForm extends Component<{ close?: () => any }, { name: string, ema
       <div className={styles.container}>
         <FiSend className={styles.icon} />
         <h4>Join Our Mailing List</h4>
-        <p>Be one of our many subscribers to get updates on what's happening with TAJ The Future</p>
+        <p>Be one of our many subscribers to get updates on COVID-19</p>
         <form onSubmit={this.submitForm} className={styles.form}>
           <input
             value={this.state.name}
