@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `Official Site`,
@@ -13,8 +17,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Coda`,
-            subsets: [`latin`],
+            family: `Lato`,
+            variants: [`400`, `700`]
           },
           {
             family: `Open Sans`,
