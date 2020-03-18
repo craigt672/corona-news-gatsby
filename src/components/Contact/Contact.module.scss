@@ -1,8 +1,9 @@
 .container {
   width: 100%;
   box-sizing: border-box;
+  min-height: calc(100vh - 66px);
   padding-top: calc(100vh/4);
-  font-family: 'Coda';
+  font-family: Lato;
   display: flex;
   flex-direction: column;
   align-items: center;
