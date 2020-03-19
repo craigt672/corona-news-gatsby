@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Official Site`,
-    description: `CoronaCentral: Latest News, Research and Expert Advice on CoronaVirus (COVID-19)" />`,
+    description: `CoronaCentral: Latest News, Research and Expert Advice on CoronaVirus (COVID-19)`,
     author: `Craig Thomas`,
   },
   plugins: [
