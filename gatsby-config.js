@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Official Site`,
-    description: `Enjoy videos and music from TajTheFuture, a Yonkers native rapper hitting the industry by storm.`,
+    description: `CoronaCentral: Latest News, Research and Expert Advice on CoronaVirus (COVID-19)" />`,
     author: `Craig Thomas`,
   },
   plugins: [
@@ -32,6 +32,7 @@ module.exports = {
       options: {
         fonts: [
           `Coda`,
+          `Lato`,
           `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
