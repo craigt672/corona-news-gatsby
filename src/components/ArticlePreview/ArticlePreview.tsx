@@ -1,16 +1,22 @@
 import React from 'react';
 
+import { slugify }from '../../util/createSlug';
 import styles from './ArticlePreview.module.scss';
-
+import { Link } from 'gatsby';
 
 export function FirstArticlePreview({ image, title, description  }: any) {
+  const slug = slugify(title);
+  const link = `/news/${slug}`
+  console.log('title: ', title);
+  console.log('slug: ', slug);
+
   return (
     <div className={styles.prevContainer}>
-      <a
+      <Link
         className={styles.img}
-        href={image} 
+        to={link} 
         style={{backgroundImage: `url(${image})`}}>   
-      </a>
+      </Link>
       <div className={styles.body}>
         <h5 className={styles.title}>
           {title}
@@ -24,13 +30,19 @@ export function FirstArticlePreview({ image, title, description  }: any) {
 }
 
 function ArticlePreview({ image, title, description  }: any) {
+  const slug = slugify(title);
+  const link = `/news/${slug}`
+
+  console.log('title: ', title);
+  console.log('slug: ', slug);
+
   return (
     <div className={styles.container}>
-      <a
+      <Link
         className={styles.img}
-        href={image} 
+        to={link} 
         style={{backgroundImage: `url(${image})`}}>   
-      </a>
+      </Link>
       <div className={styles.body}>
         <h5 className={styles.title}>
           {title}

@@ -6,79 +6,53 @@ import SectionTitle from '../SectionTitle/SectionTitle';
 
 import styles from './LatestNews.module.scss';
 
-const NEWS_TOPIC = 'Coronavirus';
-const API_KEY = process.env.GATSBY_NEWS_API_KEY;
+import { graphql, useStaticQuery } from 'gatsby';
 
-const newsApi = axios.create({
-  baseURL: `https://newsapi.org/v2/everything?q=${NEWS_TOPIC}&apiKey=${API_KEY}`
-});
+function News() {
 
-newsApi.interceptors.response.use(function (response) {
-  return response.data;
-}, function (error) {
-  return Promise.reject(error);
-});
-
-class News extends React.Component {
-  state = {
-    articles: [],
-    loading: true,
-    listAllArticles: false
-  }
-
-  async componentDidMount() {
-    try {
-      const { articles } = await newsApi.get('');
-
-      this.setState({ articles, loading: false });
-    } catch (error) {
-      console.error({ error });
+  const data = useStaticQuery(graphql`
+    query newsQuery {
+      allArticlesJson(sort: {fields: publishedAt, order: DESC}, limit: 4) {
+        edges {
+          node {
+            author
+            description
+            title
+            url
+            urlToImage
+            publishedAt
+          }
+        }
+      }
     }
-  }
+  `);
 
-  render() {
-    const { articles, loading, listAllArticles } = this.state;
+  const articlesData: any[] = data.allArticlesJson.edges;
 
-    const sampleArticleList = articles.slice(0, 3);
-    const fullArticleList = articles.slice(1, 4);
-    const firstArticle = articles[0];
+  const firstArticleData = articlesData[0];
+  const sideArticlesData = articlesData.slice(1, 4);
 
-    if (loading) {
-      return (
-        <div className={styles.container}>
-          {/* <Loader
-            type="Puff"
-            color="#008489"
-            height={100}
-            width={100}
-          /> */}
-          Loading......
-        </div>
-      );
-    }
-
-    return (
-      <>
-       <SectionTitle title="Latest News" />
-      <div className={styles.container}>
-        <FirstArticlePreview
-          image={firstArticle.urlToImage}
-          title={firstArticle.title}
-          description={firstArticle.description}
-        />
-        <div className={styles.sideArticles}>
-          {fullArticleList.map((data: any) => (
-            <ArticlePreview
-              image={data.urlToImage}
-              title={data.title}
-              description={data.description}
-            />
-          ))}
-        </div>
+  return (
+    <>
+     <SectionTitle title="Latest News" />
+    <div className={styles.container}>
+      <FirstArticlePreview
+        image={firstArticleData.node.urlToImage}
+        title={firstArticleData.node.title}
+        description={firstArticleData.node.description}
+      />
+      <div className={styles.sideArticles}>
+        {sideArticlesData.map((data: any) => (
+          <ArticlePreview
+            image={data.node.urlToImage}
+            title={data.node.title}
+            description={data.node.description}
+          />
+        ))}
       </div>
-      </>
-    )
-  }
+    </div>
+    </>
+  )
 }
 
 export default News;

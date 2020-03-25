@@ -1,26 +1,62 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require('path');
+const { slugify } = require('./src/util/createSlug');
 
-// You can delete this file if you're not using it
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
 
-exports.onCreateWebpackConfig = ({
-  stage,
-  actions,
-  getConfig
-}) => {
-  if (stage === 'build-html') {
-    actions.setWebpackConfig({
-      externals: getConfig().externals.concat(function(context, request, callback) {
-        const regex = /^@?firebase(\/(.+))?/;
-        // exclude firebase products from being bundled, so they will be loaded using require() at runtime.
-        if (regex.test(request)) {
-          return callback(null, 'umd ' + request);
-        }
-        callback();
-      })
-    });
+  if (node.internal.type === 'ArticlesJson') {
+    const slugFromTitle = slugify(node.title);
+
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slugFromTitle
+    })
   }
-};
+}
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  // Page templates
+  const templates = {
+    article: path.resolve('src/templates/article.tsx')
+  }
+
+  const res = await graphql(`
+    {
+      allArticlesJson(sort: {fields: publishedAt, order: DESC}, limit: 4) {
+        edges {
+          node {
+            author
+            description
+            title
+            url
+            urlToImage
+            publishedAt
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (res.errors) return Promise.reject(res.errors)
+
+  // Extracting all posts from res
+  const articles = res.data.allArticlesJson.edges
+
+  // Create single post pages
+  articles.forEach(({ node }) => {
+    createPage({
+      path: `news/${node.fields.slug}`,
+      component: templates.article,
+      context: {
+        // Passing slug for template to use to fetch the post
+        slug: node.fields.slug
+      },
+    })
+  })
+}

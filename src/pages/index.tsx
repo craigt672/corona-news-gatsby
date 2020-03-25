@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Router } from '@reach/router';
 
 import Header from '../components/Header/Header';
 import SEO from '../components/Seo/Seo';
@@ -13,19 +14,6 @@ import app from '../config';
 
 import GlobalContext from '../contexts';
 
-// import {
-//   EventRegistry,
-//   QueryArticles,
-//   QueryItems,
-//   RequestArticlesInfo,
-//   ReturnInfo,
-//   ArticleInfoFlags,
-//   ConceptInfoFlags
-// } from 'eventregistry';
-
-// const er = new EventRegistry({apiKey: '283e8c19-f734-48e9-a254-ec96ddeb338d'});
-
-
 export default function HomePage() {
   // const logPageViewEvent = () => {
   //   if (typeof window !== 'undefined') {
@@ -35,22 +23,6 @@ export default function HomePage() {
   // }
   
   // useEffect(logPageViewEvent);
-
-  // const getArticles = () => async () => {
-  //   try {
-
-  //     const q3 = new QueryArticles({keywords: QueryItems.AND(["Barack", "Obama"])});
-
-  //     const response = await er.execQuery(q3);
-
-  //     console.log(response);
-  //     return response;
-  //   } catch(err) {
-  //     console.error(err);
-  //   }
-  // };
-  
-  // useEffect(getArticles, []);
 
   return (
     <GlobalContext>
