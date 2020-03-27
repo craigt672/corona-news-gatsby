@@ -1,0 +1,325 @@
+@import './functions.scss';
+@import './verticals/verticals.scss';
+
+@mixin viewport($media) {
+  @if $media == mobile {
+    @media screen and (max-width: $media-tablet - 1) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media screen and (min-width: $media-tablet) and (max-width: $media-desktop - 1) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media screen and (min-width: $media-desktop) and (max-width: $media-desktop-large - 1) {
+      @content;
+    }
+  } @else if $media == desktop-large {
+    @media screen and (min-width: $media-desktop-large) {
+      @content;
+    }
+  } @else if $media == allmobile {
+    @media screen and (max-width: $media-desktop - 1) {
+      @content;
+    }
+  } @else if $media == alldesktop {
+    @media screen and (min-width: $media-desktop) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $media - 1) {
+      @content;
+    }
+  }
+}
+
+/**
+* Flexbox
+*/
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@mixin flexbox {
+  display: -webkit-box; //sass-lint:disable-line no-duplicate-properties
+  display: -moz-box; //sass-lint:disable-line no-duplicate-properties
+  display: -ms-flexbox; //sass-lint:disable-line no-duplicate-properties
+  display: -webkit-flex; //sass-lint:disable-line no-duplicate-properties
+  display: flex; //sass-lint:disable-line no-duplicate-properties
+}
+
+@mixin flex-wrap($wrap) {
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+}
+
+@mixin text-input {
+  margin-right: rem(10px);
+  padding: rem(3px 10px);
+  border-radius: rem(5px);
+  background: $color-white;
+
+  input[type='text'] {
+    border: 0;
+    outline: 0;
+  }
+
+  i {
+    @include vertical-color(color, footer-links);
+  }
+}
+
+@mixin button {
+  padding: rem(0 20px);
+  border-radius: rem(5px);
+
+  @include vertical-font(secondary);
+  @include vertical-color(color, button-primary-text);
+  @include vertical-color(background-color, primary);
+
+  font-size: rem(11px);
+  text-transform: uppercase;
+}
+
+/*
+The following two are used as such from a components scss file:
+  @include vertical-color; ||
+  @include vertical-color(color, secondary)
+*/
+@mixin vertical-color($property: background-color, $kind: primary) {
+  @each $vertical in $verticals {
+    $vertical-name: nth($vertical, 1);
+    $vertical-map: nth($vertical, 2);
+    $color: map-deep-get($vertical-map, color, $kind);
+
+    :global(.#{$vertical-name}) & {
+      #{$property}: $color;
+    }
+  }
+}
+
+/*
+  @include vertical-font; ||
+  @include vertical-font(primary || secondary)
+*/
+@mixin vertical-font($kind: primary) {
+  @each $vertical in $verticals {
+    $vertical-name: nth($vertical, 1);
+    $vertical-map: nth($vertical, 2);
+    $font: map-deep-get($vertical-map, font, $kind);
+
+    :global(.#{$vertical-name}) & {
+      font-family: $font, sans-serif;
+
+      @if $kind == 'secondary' and $vertical-name == 'mtd' {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+/*
+  @include responsive-ratio(16, 9);
+*/
+
+@mixin responsive-ratio($x, $y, $pseudo: false) {
+  $padding: unquote($y / $x * 100 + '%');
+
+  @if $pseudo {
+    &:before {
+      @include pseudo($pos: relative);
+
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+@mixin cssResponsiveGrid {
+  display: grid;
+  min-width: 320px;
+  max-width: $media-desktop-large;
+  margin: 0 auto;
+  overflow: hidden;
+  grid-template-rows: 1fr;
+  grid-column-gap: rem(30px);
+  grid-row-gap: rem(16px);
+  grid-template-areas: 'main main main main main main main main aside';
+  grid-template-columns: repeat(9, 1fr);
+
+  // fix width from 768 to 1000px width
+  @media only screen and (min-device-width: 1200px) and (min-width: $media-tablet) and (max-width: $media-desktop - 1) {
+    min-width: rem(1000px);
+  }
+
+  aside {
+    width: rem(300px);
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: rem(16px);
+    overflow: hidden;
+    @include viewport(mobile) {
+      width: initial;
+    }
+
+    &:empty {
+      @include viewport(mobile) {
+        margin-top: rem(-32px);
+      }
+    }
+  }
+
+  section {
+    padding-left: rem(16px);
+    overflow: hidden;
+  }
+
+  @include viewport(mobile) {
+    display: block;
+
+    section {
+      padding-right: rem(16px);
+    }
+
+    aside {
+      padding-left: rem(16px);
+    }
+  }
+}
+
+@mixin h1($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(28px);
+  line-height: rem(32px);
+
+  @media (min-width: $media-tablet) {
+    font-size: rem(28px);
+    line-height: rem(34px);
+  }
+}
+
+@mixin h2($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(16px);
+  line-height: rem(24px);
+
+  @media (min-width: $media-tablet) {
+    font-size: rem(20px);
+    font-size: rem(28px);
+  }
+}
+
+@mixin h3($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(12px);
+  line-height: rem(20px);
+
+  @media (min-width: $media-tablet) {
+    font-size: rem(28px);
+    line-height: rem(34px);
+  }
+}
+
+@mixin h4($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(22px);
+  line-height: rem(30px);
+
+  @media (min-width: $media-tablet) {
+    font-size: rem(18px);
+    line-height: rem(26px);
+  }
+}
+
+@mixin h5($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(18px);
+  line-height: rem(24px);
+
+  @media (min-width: $media-tablet) {
+    font-size: rem(16px);
+    line-height: rem(24px);
+  }
+}
+
+@mixin h6($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(12px);
+  line-height: rem(20px);
+
+  @media (min-width: $media-tablet) {
+    font-size: rem(14px);
+    line-height: rem(18px);
+  }
+}
+
+@mixin h7($font: primary) {
+  @include vertical-font($font);
+  font-size: rem(12px);
+  line-height: rem(20px);
+}
+
+@mixin ad {
+  @include vertical-color(background, article-text-1);
+  margin-bottom: rem(16px);
+  @include viewport(mobile) {
+    margin-bottom: rem(32px);
+  }
+  background: transparent;
+}
+
+%asideBoxContainer {
+  @include vertical-color(background, article-text-1);
+  @include vertical-font(secondary);
+  position: relative;
+  align-self: stretch;
+  margin-bottom: rem(16px);
+  padding: rem(20px);
+
+  @include viewport(mobile) {
+    &:first-child {
+      margin-bottom: rem(32px);
+    }
+
+    &:last-child {
+      margin-bottom: rem(0);
+    }
+  }
+}
+
+%asideBoxTitle {
+  // @include h4(secondary);
+  // h4 brand on mobie and desktop TODO: need to make this nicer
+  @include vertical-font(secondary);
+  margin-top: rem(-6px);
+  margin-bottom: rem(16px);
+
+  @include vertical-color(color, blockquote-text);
+  font-size: rem(18px);
+  line-height: rem(26px);
+}
+
+// debug
+%bdr {
+  border: 1px solid #f00;
+}
+
+/**
+* Viewport sized typography with minimum and maximum values
+* https://www.smashingmagazine.com/2016/05/fluid-typography/
+*
+* @param {Number}   $min-fz   Minimum font-size in px
+* @param {Number}   $max-fz   Maximum font-size in px
+* @param {Number}   $min-screen     Minimum screen width in px
+* @param {Number}   $max-screen     Maximum screen width in px
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@mixin responsive-font($min-fz, $max-fz, $min-screen, $max-screen) {
+  font-size: calc(
+    #{$min-fz} + (#{sanitize($max-fz)} - #{sanitize($min-fz)}) * (100vw - #{$min-screen}) / (#{sanitize(
+            $max-screen
+          )} - #{sanitize($min-screen)})
+  );
+}

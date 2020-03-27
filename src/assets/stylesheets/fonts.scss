@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/Gilroy-SemiBold.eot'); /* For IE6-8 */
+  src: local('Gilroy-SmBd'), url('../fonts/Gilroy-SemiBold.woff2') format('woff2'),
+    url('../fonts/Gilroy-SemiBold.woff') format('woff'),
+    url('../fonts/Gilroy-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/Roboto-Regular.eot'); /* For IE6-8 */
+  src: local('Roboto'), local('Roboto-Regular'), url('../fonts/Roboto-Regular.woff2') format('woff2'),
+    url('../fonts/Roboto-Regular.woff') format('woff'), url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'RobotoCondensed';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/RobotoCondensed-Regular.eot'); /* For IE6-8 */
+  src: local('RobotoCondensed'), local('RobotoCondensed-Regular'),
+    url('../fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+    url('../fonts/RobotoCondensed-Regular.woff') format('woff'),
+    url('../fonts/RobotoCondensed-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'HelveticaCondensed';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/HelveticaNeueLTStd-BdCn.eot'); /* For IE6-8 */
+  src: local('HelveticaCondensed'), local('HelveticaNeueLTStd-BdCn'),
+    url('../fonts/HelveticaNeueLTStd-BdCn.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueLTStd-BdCn.woff') format('woff'),
+    url('../fonts/HelveticaNeueLTStd-BdCn.ttf') format('truetype');
+}

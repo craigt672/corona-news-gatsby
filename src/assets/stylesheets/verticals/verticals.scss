@@ -1,0 +1,88 @@
+/*
+  Keys for different verticals
+  can be found in util/getVertical
+*/
+
+$verticals: (
+  mtd: (
+    font: (
+      primary: Roboto,
+      secondary: Gilroy,
+    ),
+    color: (
+      'primary': #c10000,
+      'primary-hover': #960000,
+      'secondary': #ccc,
+      'secondary-hover': #999,
+      'a-secondary-hover': #2e91e8,
+      'button-primary-text': #fff,
+      'article-text-1': #f2f2f2,
+      'article-text-2': #d8d8d8,
+      'article-text-3': #a5a5a5,
+      'article-text-4': #8d8d88,
+      'article-text-5': #666,
+      'article-text-6': #5a5959,
+      'article-text-7': #1c1c1c,
+      'article-header-text': #212429,
+      'blockquote-text': #282828,
+      'article-border-6': #2e2e30,
+      'nav-background': #1c1c1c,
+      'nav-button': #c10000,
+      'footer-links': #dadada,
+    ),
+  ),
+  amm: (
+    font: (
+      'primary': Roboto,
+      'secondary': RobotoCondensed,
+    ),
+    color: (
+      'primary': #ed271c,
+      'primary-hover': #fc3232,
+      'secondary': #ccc,
+      'secondary-hover': #999,
+      'a-secondary-hover': #2e91e8,
+      'button-primary-text': #fff,
+      'article-text-1': #f2f2f2,
+      'article-text-2': #d8d8d8,
+      'article-text-3': #a5a5a5,
+      'article-text-4': #8d8d88,
+      'article-text-5': #666,
+      'article-text-6': #5a5959,
+      'article-text-7': #1c1c1c,
+      'article-header-text': #212429,
+      'blockquote-text': #282828,
+      'article-border-6': #2e2e30,
+      'nav-background': #ed271c,
+      'nav-button': #2e2e30,
+      'footer-links': #dadada,
+    ),
+  ),
+  fw: (
+    font: (
+      'primary': Roboto,
+      'secondary': HelveticaCondensed,
+    ),
+    color: (
+      'primary': #ffc20e,
+      'primary-hover': #fc3232,
+      'secondary': #ccc,
+      'secondary-hover': #999,
+      'a-secondary-hover': #2e91e8,
+      'button-primary-text': #2e2e30,
+      'article-text-1': #f2f2f2,
+      'article-text-2': #d8d8d8,
+      'article-text-3': #a5a5a5,
+      'article-text-4': #8d8d88,
+      'article-text-5': #666,
+      'article-text-6': #5a5959,
+      'article-text-7': #1c1c1c,
+      'article-header-text': #212429,
+      'blockquote-text': #282828,
+      'article-border-6': #2e2e30,
+      'nav-background': #2e2e30,
+      'nav-button': #ffc20e,
+      'footer-links': #dadada,
+    ),
+  ),
+);
