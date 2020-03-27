@@ -1,0 +1,41 @@
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+@function sanitize($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function px-to-rem($value) {
+  @return sanitize($value) / sanitize($base-size) * 1rem;
+}
+
+@function rem($values) {
+  $valuesLength: length($values);
+
+  @if $valuesLength == 1 {
+    @if nth($values, 1) == 0 {
+      @return nth($values, 1);
+    }
+
+    @return px-to-rem(nth($values, 1));
+  }
+
+  $remValues: ();
+
+  @for $i from 1 through $valuesLength {
+    @if nth($values, $i) == 0 {
+      $remValues: append($remValues, nth($values, $i) * 1rem);
+    } @else if nth($values, $i) == 'auto' {
+      $remValues: append($remValues, auto);
+    } @else {
+      $remValues: append($remValues, px-to-rem(nth($values, $i)));
+    }
+  }
+
+  @return $remValues;
+}
