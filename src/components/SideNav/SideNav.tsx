@@ -83,16 +83,6 @@ function SideNav() {
             <a className="oYxtQd">{link.name}</a>
           </li>
         ))}
-        <li className={[styles.listItem, styles.mobileItem].join(' ')} onClick={scClick}>
-          <a href="https://soundcloud.com/taj-the-future/tracks" target="_blank" title="TajTheFuture on SoundCloud">
-            <img src={soundcloud} className={styles.iconwrapper}></img>
-          </a>
-        </li>
-        <li className={[styles.listItem, styles.mobileItem].join(' ')} onClick={igClick}>
-          <a href="https://www.instagram.com/lootergang_taj/" target="_blank" title="TajTheFuture on Instagram">
-            <img src={insta} className={styles.iconwrapper} />
-          </a>
-        </li>
       </ul>
     </div>
   );
