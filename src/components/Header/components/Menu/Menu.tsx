@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import styles from './Menu.module.scss';
 
-import app from '../../../../config';
+// import app from '../../../../config';
 
 import NavContext, { NAV_CLOSE, NAV_OPEN } from '../../../../contexts/nav';
 
@@ -12,10 +12,10 @@ function Menu() {
   const togglePress = () => {
     navState? dispatch({type: NAV_CLOSE}): dispatch({type: NAV_OPEN});
 
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      analytics.logEvent("select_content", {content_type: "MENU_PRESS"});
-    }
+    // if (typeof window !== 'undefined') {
+    //   const analytics = app.analytics();
+    //   analytics.logEvent("select_content", {content_type: "MENU_PRESS"});
+    // }
   }
 
   const topStyles = [

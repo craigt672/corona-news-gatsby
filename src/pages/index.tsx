@@ -10,7 +10,7 @@ import SideNav from '../components/SideNav/SideNav';
 
 import styles from './styles/index.module.scss';
 
-import app from '../config';
+// import app from '../config';
 
 import GlobalContext from '../contexts';
 

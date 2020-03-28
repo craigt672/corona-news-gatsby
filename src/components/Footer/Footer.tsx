@@ -5,26 +5,26 @@ import styles from './Footer.module.scss';
 import insta from '../../images/instagram.svg';
 import soundcloud from '../../images/soundcloud.svg';
 
-import app from '../../config';
+// import app from '../../config';
 
 function Footer() {
-  if (typeof window !== 'undefined') {
-    const analytics = app.analytics();
-    analytics.logEvent("page_view", {page_title: "TAJ_INSTAGRAM"});
-  }
+  // if (typeof window !== 'undefined') {
+  //   const analytics = app.analytics();
+  //   analytics.logEvent("page_view", {page_title: "TAJ_INSTAGRAM"});
+  // }
 
   const igClick = () => {
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      analytics.logEvent("page_view", {page_title: "TAJ_INSTAGRAM"});
-    }
+    // if (typeof window !== 'undefined') {
+    //   const analytics = app.analytics();
+    //   analytics.logEvent("page_view", {page_title: "TAJ_INSTAGRAM"});
+    // }
   }
 
   const scClick = () => {
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      analytics.logEvent("page_view", {page_title: "TAJ_SOUNDCLUD"});
-    }
+    // if (typeof window !== 'undefined') {
+    //   const analytics = app.analytics();
+    //   analytics.logEvent("page_view", {page_title: "TAJ_SOUNDCLUD"});
+    // }
   }
   return (
     <footer className={styles.container}>

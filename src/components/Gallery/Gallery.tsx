@@ -4,7 +4,7 @@ import ImageGallery from 'react-image-gallery';
 import styles from './Gallery.module.scss';
 import "react-image-gallery/styles/css/image-gallery.css";
 
-import app from '../../config';
+// import app from '../../config';
  
 const images = [
   {
@@ -26,10 +26,10 @@ const images = [
 ];
 
 const galleryClick = (e: any) => {
-  if (typeof window !== 'undefined') {
-    const analytics = app.analytics();
-    analytics.logEvent("select_content", { content_type: `GALLERY_CLICK ${e}` });
-  }
+  // if (typeof window !== 'undefined') {
+  //   const analytics = app.analytics();
+  //   analytics.logEvent("select_content", { content_type: `GALLERY_CLICK ${e}` });
+  // }
 } 
 
 function Gallery() {
