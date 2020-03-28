@@ -4,10 +4,12 @@ import NavContext, { NAV_CLOSE } from '../../contexts/nav';
 
 import styles from './Article.module.scss';
 
+import { Stm, RailLong, Rail, RailSticky } from '../Ads/Ads';
+
 function Headline({ title, description }) {
   return (
     <section className={styles.header}>
-      <div className={styles.stmAd}></div>
+      <Stm />
       <h1 className={styles.title}>{title}</h1>
     </section>
   )
@@ -64,22 +66,8 @@ export default function Article({
         <Body content={content} />
       </section>
       <aside className={styles.sidebar}>
-        <div className={styles.adPlaceHolder}>
-          {/* <ArticleAd
-            sizes={AdSizes.FirstRail}
-            targeting={{
-              pos: 'top',
-            }}
-            renderImmediately
-          /> */}
-        </div>
-        {/* <ArticleAd
-          targeting={{ pos: 'bottom' }}
-          sticky
-          sizes={AdSizes.BottomRail}
-          renderOffset={210}
-          stickyOffset={80}
-        /> */}
+        <RailSticky />
+        
       </aside>
     </div>
   )
