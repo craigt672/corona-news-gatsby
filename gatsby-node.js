@@ -25,7 +25,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const res = await graphql(`
     {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}, limit: 4) {
+      allArticlesJson(sort: {fields: publishedAt, order: DESC}) {
         edges {
           node {
             author
