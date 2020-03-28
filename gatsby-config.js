@@ -18,11 +18,15 @@ module.exports = {
         fonts: [
           {
             family: `Lato`,
-            variants: [`400`, `700`]
+            variants: [`100`, `200`, `400`, `500`, `600`, `700`]
           },
           {
             family: `Open Sans`,
-            variants: [`400`, `700`]
+            variants: [`100`, `200`, `400`, `500`, `600`, `700`]
+          },
+          {
+            family: `Roboto`,
+            variants: [`100`, `200`, `400`, `500`, `600`, `700`]
           },
         ],
       },
