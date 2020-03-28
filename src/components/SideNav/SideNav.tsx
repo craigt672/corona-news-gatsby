@@ -14,10 +14,11 @@ function SideNav() {
 
   const links = [
     { name: 'NEWS', location: '#news' },
+    { name: 'TOP READS', location: '#reads' },
     { name: 'HEALTH', location: '#health' },
     { name: 'Research', location: '#research' },
-    { name: 'SHOP', location: '#shop' },
-    { name: 'CONTACT', location: '#contact' }
+    { name: 'TOOLS', location: '#tools' },
+    { name: 'AUTHORS', location: '#authors' }
   ];
 
   const navStyles = navState ? (
