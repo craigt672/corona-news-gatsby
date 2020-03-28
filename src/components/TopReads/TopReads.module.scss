@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+.sideBar {
+  display: none;
+}
+
+
+//Destop
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 1080px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .reads {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .sideBar {
+    width: 30%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+}
