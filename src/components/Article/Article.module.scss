@@ -1,0 +1,181 @@
+// Generic base global scss variables
+@import '../../assets/stylesheets/globals.scss';
+
+.container {
+  position: relative;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 18px 0;
+  grid-template-areas:
+    'ArticleHeader'
+    'ArticleMain'
+    'ArtitleFooter';
+  border-bottom: 1px solid #ccc;
+  padding: $mobile-text-padding;
+}
+
+.socialContainer {
+  margin-left: rem(10px);
+}
+
+.socialIcon {
+  display: inline-block;
+  margin: rem(5px);
+  text-indent: rem(-9999px);
+  width: rem(16px);
+  height: rem(16px);
+  background-size: contain;
+}
+
+.inner {
+  position: sticky;
+  top: calc(50vh - 24px);
+}
+
+.header {
+  grid-area: ArticleHeader;
+  padding-top: rem(4px);
+}
+
+.title {
+  @include vertical-color(color, article-text-7);
+  @include vertical-font(secondary);
+  font-size: rem(22px);
+  line-height: rem(30px);
+  margin: rem(10px) auto;
+}
+
+.text {
+  color: #333;
+  font-size: rem(16px);
+  line-height: rem(28px);
+
+  a {
+    @include vertical-color(color, article-text-5);
+
+    &:hover {
+      @include vertical-color(color, article-text-6);
+      text-decoration: underline;
+    }
+  }
+}
+
+.description {
+  margin-top: rem(6px);
+  color: #666;
+  line-height: rem(22px);
+}
+
+.hero {}
+
+.body {
+  grid-area: ArticleMain;
+}
+
+.footer {
+  grid-area: ArtitleFooter;
+}
+
+.sidebar {
+  display: none;
+}
+
+.adPlaceHolder {
+  min-height: rem(250px);
+  width: rem(300px);
+  background: #f2f2f2;
+}
+
+.immersiveAd {
+  max-width: 100%;
+  margin: rem(17px 0 25px 0);
+  text-align: center;
+  justify-content: center;
+}
+
+// Desktop
+@media (min-width: $media-tablet) {
+  .container {
+    max-width: 1168px;
+    margin: 0 auto;
+    padding: 0 0 3.4375rem;
+    grid-gap: 18px 50px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-areas:
+      'ArticleHeader ArticleHeader ArticleHeader ArticleHeader ArticleHeader'
+      'ArticleMain ArticleMain ArticleMain ArticleMain SideRail'
+      'ArtitleFooter ArtitleFooter ArtitleFooter ArtitleFooter ArtitleFooter';
+  }
+
+  .title {
+    font-size: rem(40px);
+    line-height: rem(48px);
+  }
+
+  .text {
+    padding: 0;
+    font-size: rem(18px);
+    line-height: rem(30px);
+  }
+
+  .description {
+    display: block;
+    font-size: rem(24px);
+    font-weight: 200;
+    line-height: rem(32px);
+  }
+
+  .header {
+    padding: rem(4px 0 0);
+  }
+
+  .stmAd {
+    height: rem(55px);
+    margin: rem(15px 0 0);
+    background-color: #f2f2f2;
+    > div {
+      text-align: center;
+    }
+  }
+
+  .content {
+    padding: rem(40px 0 0);
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    grid-area: SideRail;
+    width: rem(300px);
+  }
+
+  .immersiveAd {
+    display: flex;
+  }
+}
+
+@media (min-width: $media-desktop-large) {
+  .socialContainer {
+    position: absolute;
+    top: rem(300px);
+    bottom: 0;
+    left: rem(-16px);
+    width: rem(16px);
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .socialIcon {
+    margin: rem(0 0 8px);
+  }
+}
+
+@media (max-width: $media-tablet) {
+  .immersiveAd {
+    display: none;
+  }
+}
