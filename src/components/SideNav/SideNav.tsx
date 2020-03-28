@@ -7,7 +7,7 @@ import soundcloud from '../../images/soundcloud.svg';
 
 import NavContext, { NAV_CLOSE, NAV_OPEN } from '../../contexts/nav';
 
-import app from '../../config';
+// import app from '../../config';
 
 function SideNav() {
   const [ navState, dispatch ]: any[] =  useContext(NavContext);
@@ -32,48 +32,48 @@ function SideNav() {
   }
 
   const goto = (link: string) => {
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      window.location.href = link;
+    // if (typeof window !== 'undefined') {
+    //   const analytics = app.analytics();
+    //   window.location.href = link;
 
-      if(link === '#music') {
-        analytics.logEvent("select_content", {content_type: "music"});
-      }
+    //   if(link === '#music') {
+    //     analytics.logEvent("select_content", {content_type: "music"});
+    //   }
 
-      if(link === '#gallery') {
-        analytics.logEvent("select_content", {content_type: "gallery"});
-      }
+    //   if(link === '#gallery') {
+    //     analytics.logEvent("select_content", {content_type: "gallery"});
+    //   }
 
-      if(link === '#videos') {
-        analytics.logEvent("select_content", {content_type: "videos"});
-      }
+    //   if(link === '#videos') {
+    //     analytics.logEvent("select_content", {content_type: "videos"});
+    //   }
 
-      if(link === '#shop') {
-        analytics.logEvent("select_content", {content_type: "shop"});
-        // return navigate(`/shop`);
-      }
+    //   if(link === '#shop') {
+    //     analytics.logEvent("select_content", {content_type: "shop"});
+    //     // return navigate(`/shop`);
+    //   }
 
-      if(link === '#contact') {
-        analytics.logEvent("select_content", {content_type: "contact"});
-      }
-    }
+    //   if(link === '#contact') {
+    //     analytics.logEvent("select_content", {content_type: "contact"});
+    //   }
+    // }
     toggleNav();
   };
 
 
   const igClick = () => {
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      analytics.logEvent("page_view", {page_title: "TAJ_INSTAGRAM"});
-    }
+    // if (typeof window !== 'undefined') {
+    //   const analytics = app.analytics();
+    //   analytics.logEvent("page_view", {page_title: "TAJ_INSTAGRAM"});
+    // }
   }
 
 
   const scClick = () => {
-    if (typeof window !== 'undefined') {
-      const analytics = app.analytics();
-      analytics.logEvent("page_view", {page_title: "TAJ_SOUNDCLUD"});
-    }
+    // if (typeof window !== 'undefined') {
+    //   const analytics = app.analytics();
+    //   analytics.logEvent("page_view", {page_title: "TAJ_SOUNDCLUD"});
+    // }
   }
 
   return (

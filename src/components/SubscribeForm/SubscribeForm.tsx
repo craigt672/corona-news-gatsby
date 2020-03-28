@@ -5,9 +5,10 @@ import styles from './SubscribeForm.module.scss';
 
 import Button from '../Button/Button';
 
-import app from '../../config';
+// import app from '../../config';
 
-const db = app.firestore();
+
+// const db = app.firestore();
 
 class SubscribeForm extends Component<{ close?: () => any }, { name: string, email: string }> {
   state = {
@@ -25,25 +26,26 @@ class SubscribeForm extends Component<{ close?: () => any }, { name: string, ema
 
     if (typeof window !== 'undefined') {
 
-      app.analytics().logEvent("generate_lead", {
-        name,
-        email
-      });
+      // app.analytics().logEvent("generate_lead", {
+      //   name,
+      //   email
+      // });
     }
 
     try {
 
       this.leaveForm();
-      
-      await db.collection('subscribers').add({
-        name,
-        email
-      });
 
+      // if (typeof window !== 'undefined') {
+      //   await db.collection('subscribers').add({
+      //     name,
+      //     email
+      //   });
+      // }
     } catch (error) {
-      if (typeof window !== 'undefined') {
-        app.analytics().logEvent("exception", {description: error});
-      }
+      // if (typeof window !== 'undefined') {
+      //   app.analytics().logEvent("exception", {description: error});
+      // }
       console.error(error);
     }
   }
