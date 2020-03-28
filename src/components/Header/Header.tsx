@@ -4,6 +4,7 @@ import styles from './Header.module.scss';
 import Menu from './components/Menu/Menu';
 
 import ModalContext, { MODAL_OPEN } from '../../contexts/modal';
+import { Link } from 'gatsby';
 
 function Header() {
 
@@ -16,7 +17,9 @@ function Header() {
       <div className={styles.leftNav}>
         <Menu />
       </div>
-      <h1><span>corona</span>central</h1>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <h1><span>corona</span>central</h1>
+      </Link>
       <h4 onClick={openSubscribeModal}>Subscribe</h4>
     </header>
   );
