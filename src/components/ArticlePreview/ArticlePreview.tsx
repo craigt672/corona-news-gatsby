@@ -8,9 +8,11 @@ export function FirstArticlePreview({ image, title, description }: any) {
   const slug = slugify(title);
   const link = `/news/${slug}`
 
-  const descriptionText = description.replace('Read more...', '');
+  let descriptionText = '';
 
-  console.log('text: ', descriptionText);
+  if(description) {
+    descriptionText = description.replace('Read more...', '');
+  }
 
   return (
     <div className={styles.prevContainer}>
@@ -24,9 +26,11 @@ export function FirstArticlePreview({ image, title, description }: any) {
           <h5 className={styles.title}>
             {title}
           </h5>
-          <p className={styles.description}>
-            {descriptionText}
-          </p>
+          { description &&
+            <p className={styles.description}>
+              {descriptionText}
+            </p>
+          }
         </Link>
       </div>
     </div>
@@ -37,9 +41,11 @@ function ArticlePreview({ image, title, description }: any) {
   const slug = slugify(title);
   const link = `/news/${slug}`
 
-  const descriptionText = description.replace('Read more...', '');
+  let descriptionText = '';
 
-  console.log('text: ', descriptionText);
+  if(description) {
+    descriptionText = description.replace('Read more...', '');
+  }
 
   return (
     <div className={styles.container}>
@@ -53,9 +59,146 @@ function ArticlePreview({ image, title, description }: any) {
           <h5 className={styles.title}>
             {title}
           </h5>
-          <p className={styles.description}>
-            {descriptionText}
-          </p>
+          { description &&
+            <p className={styles.description}>
+              {descriptionText}
+            </p>
+          }
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+export function ArticleRowPreview({ image, title, description }: any) {
+  const slug = slugify(title);
+  const link = `/news/${slug}`
+
+  let descriptionText = '';
+
+  if(description) {
+    descriptionText = description.replace('Read more...', '');
+  }
+
+  return (
+    <div className={styles.rowContainer}>
+      <Link
+        className={styles.img}
+        to={link}
+        style={{ backgroundImage: `url(${image})` }}>
+      </Link>
+      <div className={styles.body}>
+        <Link className={styles.link} to={link}>
+          <h5 className={styles.title}>
+            {title}
+          </h5>
+          { description &&
+            <p className={styles.description}>
+              {descriptionText}
+            </p>
+          }
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+
+export function AuthorPreview({ image, title, description }: any) {
+  const slug = slugify(title);
+  const link = `/news/${slug}`
+
+  let descriptionText = '';
+
+  if(description) {
+    descriptionText = description.replace('Read more...', '');
+  }
+
+  return (
+    <div className={styles.authorContainer}>
+      <Link
+        className={styles.img}
+        to={link}
+        style={{ backgroundImage: `url(${image})` }}>
+      </Link>
+      <div className={styles.body}>
+        <Link className={styles.link} to={link}>
+          <h5 className={styles.title}>
+            {title}
+          </h5>
+
+          { description &&
+            <p className={styles.description}>
+              {descriptionText}
+            </p>
+          }
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+
+export function TopReadsPreview({ image, title, description }: any) {
+  const slug = slugify(title);
+  const link = `/news/${slug}`
+
+  let descriptionText = '';
+
+  if(description) {
+    descriptionText = description.replace('Read more...', '');
+  }
+
+  return (
+    <div className={styles.topReadsContainer}>
+      <Link
+        className={styles.img}
+        to={link}
+        style={{ backgroundImage: `url(${image})` }}>
+      </Link>
+      <div className={styles.body}>
+        <Link className={styles.link} to={link}>
+          <h5 className={styles.title}>
+            {title}
+          </h5>
+          { description &&
+            <p className={styles.description}>
+              {descriptionText}
+            </p>
+          }
+        </Link>
+      </div>
+    </div>
+  )
+}
+
+export function ResearchPreview({ image, title, description }: any) {
+  const slug = slugify(title);
+  const link = `/news/${slug}`
+
+  let descriptionText = '';
+
+  if(description) {
+    descriptionText = description.replace('Read more...', '');
+  }
+
+  return (
+    <div className={styles.researchContainer}>
+      <Link
+        className={styles.img}
+        to={link}
+        style={{ backgroundImage: `url(${image})` }}>
+      </Link>
+      <div className={styles.body}>
+        <Link className={styles.link} to={link}>
+          <h5 className={styles.title}>
+            {title}
+          </h5>
+          { description &&
+            <p className={styles.description}>
+              {descriptionText}
+            </p>
+          }
         </Link>
       </div>
     </div>
