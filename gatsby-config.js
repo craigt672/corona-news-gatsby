@@ -70,31 +70,28 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
-    // {
-    //   resolve: 'gatsby-source-firestore',
-    //   options: {
-    //     credential: require("./.firebase-key.json"),
-    //     types: [
-    //       {
-    //         type: 'Article',
-    //         collection: 'news',
-    //         map: doc => ({
-    //           articles___NODE: doc.articles.map((article, idx) => ({
-    //             // id: `id-${idx}`,
-    //             author: article.author,
-    //             description: article.description,
-    //             content: article.content,
-    //             source: article.source,
-    //             title: article.title,
-    //             url: article.url,
-    //             imageUrl: article.urlToImage,
-    //             publishedAt: article.publishedAt
-    //           }))
-    //         }),
-    //       }
-    //     ],
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-firestore',
+      options: {
+        credential: require("./.firebase-key.json"),
+        types: [
+          {
+            type: 'Article',
+            collection: 'top-headlines',
+            map: doc => ({
+              author: doc.author,
+              description: doc.description,
+              content: doc.bodyContent,
+              title: doc.title,
+              url: doc.url,
+              // source: article.source,
+              // imageUrl: article.urlToImage,
+              // publishedAt: article.publishedAt
+            }),
+          }
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
