@@ -21,7 +21,7 @@
   font-size: 1rem;
   line-height: 1.25rem;
   font-family: 'Roboto', sans-serif;
-  color: #8d8d88;
+  color: #35080b;
 }
 
 .socialContainer {
@@ -51,12 +51,12 @@
   font-family: 'Khula', sans-serif;
   color: #1c1c1c;
   text-transform: capitalize;
-  @include vertical-color(color, article-text-7);
-  // @include vertical-font(secondary);
-  font-size: rem(22px);
+  // @include vertical-color(color, article-text-7);
+  font-size: rem(24px);
+  font-weight: 600;
   line-height: 1.875rem;
-  letter-spacing: .5px;
-  margin: rem(0px) auto rem(10px) auto;
+  letter-spacing: .3px;
+  margin: 0px auto 0px auto;
 }
 
 .text {
@@ -91,8 +91,6 @@
   color: #666;
   line-height: rem(22px);
 }
-
-.hero {}
 
 .body {
   grid-area: ArticleMain;
@@ -136,8 +134,9 @@
   }
 
   .title {
-    font-size: rem(40px);
+    font-size: rem(36px);
     line-height: rem(48px);
+    word-break: break-all;
   }
 
   .text {
