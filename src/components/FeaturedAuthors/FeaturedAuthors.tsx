@@ -11,7 +11,7 @@ function FeaturedAuthors() {
 
   const data = useStaticQuery(graphql`
     query authorsQuery {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}) {
+      allArticle(sort: {fields: publishedAt, order: DESC}, filter: {urlToImage: {ne: "null"}}) {
         edges {
           node {
             author
@@ -26,7 +26,7 @@ function FeaturedAuthors() {
     }
   `);
 
-  const articlesData: any[] = data.allArticlesJson.edges;
+  const articlesData: any[] = data.allArticle.edges;
   const sideArticlesData = articlesData.slice(17, 21);
 
   return (

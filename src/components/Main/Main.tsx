@@ -24,10 +24,10 @@ export default function Main() {
     <div className={styles.container} onClick={closeNav}>
       <LatestNews />
       <TopReads />
-      <HealthNews />
-      <Research />
-      <Tools />
-      <FeaturedAuthors />
+      {/* <HealthNews /> */}
+      {/* <Research /> */}
+      {/* <Tools /> */}
+      {/* <FeaturedAuthors /> */}
     </div>
   )
 }

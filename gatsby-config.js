@@ -28,6 +28,10 @@ module.exports = {
             family: `Roboto`,
             variants: [`100`, `200`, `400`, `500`, `600`, `700`]
           },
+          {
+            family: `Khula`,
+            variants: [`600`, `700`]
+          },
         ],
       },
     },
@@ -37,6 +41,7 @@ module.exports = {
         fonts: [
           `Coda`,
           `Lato`,
+          `Khula`,
           `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
         display: 'swap'
@@ -77,16 +82,16 @@ module.exports = {
         types: [
           {
             type: 'Article',
-            collection: 'top-headlines',
+            collection: 'Articles',
             map: doc => ({
               author: doc.author,
               description: doc.description,
               content: doc.bodyContent,
               title: doc.title,
               url: doc.url,
-              // source: article.source,
-              // imageUrl: article.urlToImage,
-              // publishedAt: article.publishedAt
+              source: doc.source,
+              urlToImage: doc.urlToImage,
+              publishedAt: doc.publishedAt
             }),
           }
         ],

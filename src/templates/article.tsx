@@ -21,7 +21,7 @@ export default function ArticleTemplate({ data }) {
     urlToImage,
     publishedAt,
     content
-  } = data.articlesJson;
+  } = data.article;
 
   return (
     <GlobalContext>
@@ -44,7 +44,7 @@ export default function ArticleTemplate({ data }) {
 
 export const query = graphql`
   query($slug: String!) {
-    articlesJson(fields: {slug: {eq: $slug}}) {
+    article(fields: {slug: {eq: $slug}}) {
       title
       description
       author

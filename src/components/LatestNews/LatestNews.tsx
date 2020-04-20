@@ -12,7 +12,7 @@ function News() {
 
   const data = useStaticQuery(graphql`
     query newsQuery {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}, limit: 4) {
+      allArticle(sort: {fields: publishedAt, order: DESC}, limit: 4, filter: {urlToImage: {ne: "null"}}) {
         edges {
           node {
             author
@@ -27,7 +27,7 @@ function News() {
     }
   `);
 
-  const articlesData: any[] = data.allArticlesJson.edges;
+  const articlesData: any[] = data.allArticle.edges;
 
   const firstArticleData = articlesData[0];
   const sideArticlesData = articlesData.slice(1, 4);
@@ -39,14 +39,14 @@ function News() {
       <FirstArticlePreview
         image={firstArticleData.node.urlToImage}
         title={firstArticleData.node.title}
-        description={firstArticleData.node.description}
+        // description={firstArticleData.node.description}
       />
       <div className={styles.sideArticles}>
         {sideArticlesData.map((data: any) => (
           <ArticlePreview
             image={data.node.urlToImage}
             title={data.node.title}
-            description={data.node.description}
+            // description={data.node.description}
           />
         ))}
       </div>

@@ -16,6 +16,14 @@
   padding: $mobile-text-padding;
 }
 
+.author {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-family: 'Roboto', sans-serif;
+  color: #8d8d88;
+}
+
 .socialContainer {
   margin-left: rem(10px);
 }
@@ -40,11 +48,15 @@
 }
 
 .title {
+  font-family: 'Khula', sans-serif;
+  color: #1c1c1c;
+  text-transform: capitalize;
   @include vertical-color(color, article-text-7);
-  @include vertical-font(secondary);
+  // @include vertical-font(secondary);
   font-size: rem(22px);
-  line-height: rem(30px);
-  margin: rem(10px) auto;
+  line-height: 1.875rem;
+  letter-spacing: .5px;
+  margin: rem(0px) auto rem(10px) auto;
 }
 
 .text {
@@ -52,7 +64,19 @@
   font-size: rem(16px);
   line-height: rem(28px);
 
+  >* {
+    width: 100% !important;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
   a {
+    color: #ce2029;
+    font-weight: 500;
+    text-decoration: none;
     @include vertical-color(color, article-text-5);
 
     &:hover {

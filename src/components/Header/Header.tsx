@@ -13,14 +13,14 @@ function Header() {
   const openSubscribeModal = () => modalDispatch({ type: MODAL_OPEN });
 
   return (
-    <header className={styles.container}>
-      <div className={styles.leftNav}>
+    <header className={styles.container} style={{ justifyContent: 'center', border: 'none' }}>
+      {/* <div className={styles.leftNav}>
         <Menu />
-      </div>
-      <Link to="/" style={{ textDecoration: 'none' }}>
+      </div> */}
+      <Link to="/" style={{ textDecoration: 'none', textAlign: 'center' }}>
         <h1><span>corona</span>central</h1>
       </Link>
-      <h4 onClick={openSubscribeModal}>Subscribe</h4>
+      {/* <h4 onClick={openSubscribeModal}>Subscribe</h4> */}
     </header>
   );
 }

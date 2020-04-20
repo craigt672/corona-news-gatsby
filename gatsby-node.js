@@ -4,7 +4,7 @@ const { slugify } = require('./src/util/createSlug');
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === 'ArticlesJson') {
+  if (node.internal.type === 'Article') {
     const slugFromTitle = slugify(node.title);
 
     createNodeField({
@@ -25,7 +25,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   const res = await graphql(`
     {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}) {
+      allArticle(sort: {fields: publishedAt, order: DESC}) {
         edges {
           node {
             author
@@ -46,7 +46,7 @@ exports.createPages = async ({ actions, graphql }) => {
   if (res.errors) return Promise.reject(res.errors)
 
   // Extracting all posts from res
-  const articles = res.data.allArticlesJson.edges
+  const articles = res.data.allArticle.edges
 
   // Create single post pages
   articles.forEach(({ node }) => {
