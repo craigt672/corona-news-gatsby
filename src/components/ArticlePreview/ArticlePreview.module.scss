@@ -1,7 +1,7 @@
 @import '../../assets/stylesheets/globals.scss';
 
 .container {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
 }
 
 .topReadsContainer {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
 }
 
 .researchContainer {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@
 }
 
 .authorContainer {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@
 }
 
 .prevContainer {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -145,13 +145,16 @@
 }
 
 .title {
-  font-size: rem(20px);
-  font-weight: 500;
-  line-height: 1.2;
+  font-family: 'Khula', sans-serif;
+  text-transform: capitalize;
+  letter-spacing: .3px;
+  font-size: rem(18px);
+  font-weight: 600;
+  line-height: 1.7em;
   margin: 0;
   margin-bottom: rem(10px);
   text-transform: none;
-  color: #000;
+  color: #1c1c1c;
 
   &:hover {
     color: #ce2029;
@@ -159,12 +162,13 @@
 }
 
 .description {
+  display: none;
   font-size: rem(16px);
   font-weight: 300;
   line-height: 1.5;
   margin: 0;
   text-transform: none;
-  color: #000;
+  color: #333;
 }
 
 //Destop
@@ -172,14 +176,17 @@
   .container {
     max-width: 100%;
     flex-direction: row;
+    margin-bottom: 16px;
 
     .img {
-      width: 50%;
-      padding: 0 0 25%;
+      width: 48%;
+      padding: 0 0 22%;
     }
   
     .title {
-      font-size: rem(20px);
+      letter-spacing: .3px;
+      // margin-top: 10px;
+      font-size: rem(22px);
       font-weight: 600;
       line-height: 1.2;
     }
@@ -191,7 +198,6 @@
     .description {
       margin: 0;
       text-transform: none;
-      color: #000;
       font-weight: 300;
       font-size: rem(16px);
       line-height: 1;
@@ -210,7 +216,8 @@
     }
   
     .title {
-      font-size: rem(30px);
+      letter-spacing: .3px;
+      font-size: rem(22px);
       line-height: 1;
     }
 
@@ -239,7 +246,8 @@
     }
   
     .title {
-      font-size: rem(20px);
+      letter-spacing: .3px;
+      font-size: rem(22px);
       line-height: 1.5;
       font-weight: 500;
     }
@@ -260,8 +268,10 @@
     max-width: 47%;
 
     .title {
-      font-size: rem(30px);
+      letter-spacing: .3px;
+      font-size: rem(22px);
       font-weight: 700;
+      line-height: 1.5;
     }
 
     .description {
@@ -273,7 +283,8 @@
     max-width: 47%;
 
     .title {
-      font-size: rem(30px);
+      letter-spacing: .3px;
+      font-size: rem(22px);
       font-weight: 700;
     }
 
@@ -286,12 +297,17 @@
     max-width: 30%;
 
     .title {
-      font-size: rem(20px);
+      letter-spacing: .3px;
+      font-size: rem(22px);
       font-weight: 500;
     }
 
     .description {
       font-size: rem(18px);
     }
+  }
+
+  .description {
+    display: block;
   }
 }

@@ -12,7 +12,7 @@ function Research() {
 
   const data = useStaticQuery(graphql`
     query researchQuery {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}) {
+      allArticle(sort: {fields: publishedAt, order: DESC}, filter: {urlToImage: {ne: "null"}}) {
         edges {
           node {
             author
@@ -27,7 +27,7 @@ function Research() {
     }
   `);
 
-  const articlesData: any[] = data.allArticlesJson.edges;
+  const articlesData: any[] = data.allArticle.edges;
 
   const leftSideArticles: any[] = articlesData.slice(7, 10);
   const rightSideArticles: any[] = articlesData.slice(10, 13);

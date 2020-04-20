@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import dayjs from 'dayjs';
 
 import NavContext, { NAV_CLOSE } from '../../contexts/nav';
 
@@ -19,11 +20,8 @@ function Hero({ image, author, publishedAt }) {
   return (
     <>
       <img style={{ width: '100%'}} src={image} />
-      <div>
-        <span>
-          {author}
-          <time data-c="timestamp" dateTime={publishedAt}>{publishedAt}</time>
-        </span>
+      <div className={styles.author}>
+        <span>{author} - <time data-c="timestamp" dateTime={publishedAt}>{dayjs(publishedAt).format('MMM DD, YYYY')}</time></span>
       </div>
     </>
   )
@@ -32,7 +30,9 @@ function Hero({ image, author, publishedAt }) {
 function Body({ content }) {
   return (
     <div>
-      <p className={styles.text}>{content}</p>
+      {content.map(p => {
+       return <p className={styles.text} dangerouslySetInnerHTML={{__html: p}}/>
+      })}
     </div>
   )
 }

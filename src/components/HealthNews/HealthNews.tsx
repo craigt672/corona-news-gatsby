@@ -11,7 +11,7 @@ function HealthNews() {
 
   const data = useStaticQuery(graphql`
     query HealthNewsQuery {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}) {
+      allArticle(sort: {fields: publishedAt, order: DESC}, filter: {urlToImage: {ne: "null"}}) {
         edges {
           node {
             author
@@ -26,7 +26,7 @@ function HealthNews() {
     }
   `);
 
-  const articlesData: any[] = data.allArticlesJson.edges;
+  const articlesData: any[] = data.allArticle.edges;
 
   const firstArticleData = articlesData[0];
   const sideArticlesData = articlesData.slice(12, 16);

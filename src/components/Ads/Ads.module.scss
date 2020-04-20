@@ -1,8 +1,9 @@
 @import '../../assets/stylesheets/globals.scss';
 
 .stm {
+  display: none;
   height: rem(55px);
-  margin: rem(15px 0 0);
+  margin: rem(10px 0 25px);
   background-color: #f2f2f2;
   > div {
     text-align: center;
@@ -49,5 +50,9 @@
     > div {
       text-align: center;
     }
+  }
+
+  .stm {
+    display: block;
   }
 }

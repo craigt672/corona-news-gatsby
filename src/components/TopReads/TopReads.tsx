@@ -12,7 +12,7 @@ function TopReads() {
 
   const data = useStaticQuery(graphql`
     query topReadsQuery {
-      allArticlesJson(sort: {fields: publishedAt, order: DESC}) {
+      allArticle(sort: {fields: publishedAt, order: DESC}, filter: {urlToImage: {ne: "null"}}) {
         edges {
           node {
             author
@@ -27,7 +27,7 @@ function TopReads() {
     }
   `);
 
-  const articlesData: any[] = data.allArticlesJson.edges.slice(4, 12);
+  const articlesData: any[] = data.allArticle.edges.slice(4, 12);
 
   return (
     <>
