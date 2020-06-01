@@ -11,7 +11,7 @@ export const articlesReducer = (state, action) => {
     case ARTICLES_FETCH:
       return action.payload;
     case ARTICLE_ADD:
-      return [action.payload, ...state];
+      return [...state, action.payload];
     case ARTICLE_REMOVE:
       return state.filter(article => article.id);
     default:

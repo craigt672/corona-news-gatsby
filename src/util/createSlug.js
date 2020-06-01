@@ -9,7 +9,8 @@ function slugify (title) {
   .replace(/\,/g, "")
   .replace(/\./g, "")
   .replace(/\%/g, "")
-  .replace(/\s/g, "-");
+  .replace(/\s/g, "-")
+  .replace(/\?/g, "");
 }
 
 module.exports = { slugify };

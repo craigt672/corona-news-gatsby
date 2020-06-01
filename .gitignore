@@ -71,3 +71,5 @@ yarn-error.log
 .runtimeconfig.json
 
 .firebase-key.json
+
+.firebase/
