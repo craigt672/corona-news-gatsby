@@ -2,9 +2,6 @@ import React, { useContext } from 'react';
 
 import styles from './SideNav.module.scss';
 
-import insta from '../../images/instagram.svg';
-import soundcloud from '../../images/soundcloud.svg';
-
 import NavContext, { NAV_CLOSE, NAV_OPEN } from '../../contexts/nav';
 
 // import app from '../../config';
